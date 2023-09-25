@@ -1,7 +1,8 @@
-function add(n1: number, n2: number, showresult: boolean, phrase: string) {
+function add(n1: number, n2: number, showresult: boolean, phrase: string): number {
     let result = n1 + n2;
     if (showresult) console.log(phrase + result);
     else return result;
+    return result
 }
 let number1: number; // if not initializing good to give the type 
 number1 = 5; //any other type added to this variable will give error . 
@@ -44,3 +45,8 @@ const person4 = {
     Role: role.ADMIN
 }
 
+function addandhandle(n1: number, n2:number, cb: (num: number)=> void){
+    const result = n1+n2;
+    cb(result);
+}
+console.log(addandhandle(2,4,(result)=>{}))
